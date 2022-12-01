@@ -1,6 +1,5 @@
 # Simple task management backend using GraphQL, Nodejs, Prisma stack
 
-
 ### Technical note
 
 This simple trello-cloned backend system provides simple functionalities such as create and update List and Task. This can be done using standard CRUD GraphQL API. Also, tasks within the list can be reordered so clients can freely move items in the list. This is the most tricky part and I am not sure how to achieve this. The only industry standard technique that I found is to use the [LexoRank](https://www.youtube.com/watch?v=OjQv9xMoFbg) which is a sorting technique used by JIRA software. There is also a small unit test to ensure the validity of the reordering function. I am planning to add more if time allows though :). And that's pretty much everything. Happy coding 🎉
@@ -49,4 +48,8 @@ This is the instruction to setup this project and run in your local machine. Not
 6. Run `pnpm start` to start the project.
 7. Go to `http://localhost:4000`, you should see Apollo Playground with two queries `users` and `user`. You may change the port according to `GATEWAY_PORT` in your `.env` file.
 
-# simple-task-management
+
+### Running test
+```
+pnpm test
+```
