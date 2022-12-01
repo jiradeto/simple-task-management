@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String @id @default(uuid())
+  username String
+  password String
+}
+
+model List {
+  id        String   @id @default(uuid())
+  title     String
+  tasks     Task[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Task {
+  id        String   @id @default(uuid())
+  completed Boolean  @default(false)
+  list      List     @relation(fields: [listId], references: [id])
+  listId    String
+  title     String
+  rank      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
