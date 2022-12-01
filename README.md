@@ -50,6 +50,7 @@ This is the instruction to setup this project and run in your local machine. Not
 
 
 ### Running test
+This project employs jest to implement unit test mainly for reordering task function.
 ```
 pnpm test
 ```
